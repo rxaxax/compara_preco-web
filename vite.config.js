@@ -9,5 +9,6 @@ export default defineConfig({
     proxy: {
       '/api': 'https://compara-preco-backend.onrender.com'
     }
-  }
+  },
+  base: "/",
 })
