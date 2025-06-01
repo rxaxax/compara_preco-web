@@ -22,7 +22,7 @@ const Produtos = () => {
   useEffect(() => {
     const buscarEstabelecimentos = async () => {
       try {
-        const resposta = await fetch("/api/estabelecimentos", {
+        const resposta = await fetch("https://compara-preco-backend.onrender.com/api/estabelecimentos", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const dados = await resposta.json();
@@ -38,7 +38,7 @@ const Produtos = () => {
 
   const buscarProdutos = async () => {
     try {
-      const resposta = await fetch("/api/produtos", {
+      const resposta = await fetch("https://compara-preco-backend.onrender.com/api/produtos", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const dados = await resposta.json();
@@ -59,7 +59,7 @@ const Produtos = () => {
 
   const excluirProduto = async (id) => {
     try {
-      const resposta = await fetch(`/api/produtos/${id}`, {
+      const resposta = await fetch(`https://compara-preco-backend.onrender.com/api/produtos/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -92,7 +92,7 @@ const Produtos = () => {
         ];
       }
 
-      const resposta = await fetch(`/api/produtos/${id}`, {
+      const resposta = await fetch(`https://compara-preco-backend.onrender.com/api/produtos/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -119,7 +119,7 @@ const Produtos = () => {
     e.preventDefault();
     console.log("Estabelecimento selecionado (ID):", estabelecimentoId);
     try {
-      const response = await fetch("/api/produtos", {
+      const response = await fetch("https://compara-preco-backend.onrender.com/api/produtos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

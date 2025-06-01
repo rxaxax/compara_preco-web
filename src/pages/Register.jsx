@@ -18,7 +18,7 @@ export default function Register() {
     }
 
     try {
-      const response = await fetch("/api/usuarios", {
+      const response = await fetch("https://compara-preco-backend.onrender.com/api/usuarios", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

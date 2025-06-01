@@ -13,7 +13,7 @@ const Estabelecimentos = () => {
 
   const buscarEstabelecimentos = async () => {
     try {
-      const resposta = await fetch("/api/estabelecimentos", {
+      const resposta = await fetch("https://compara-preco-backend.onrender.com/api/estabelecimentos", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const dados = await resposta.json();
@@ -32,8 +32,8 @@ const Estabelecimentos = () => {
     e.preventDefault();
 
     const url = editandoId
-      ? `/api/estabelecimentos/${editandoId}`
-      : "/api/estabelecimentos";
+      ? `https://compara-preco-backend.onrender.com/api/estabelecimentos/${editandoId}`
+      : "https://compara-preco-backend.onrender.com/api/estabelecimentos";
 
     const method = editandoId ? "PUT" : "POST";
 
@@ -76,7 +76,7 @@ const Estabelecimentos = () => {
       return;
 
     try {
-      const response = await fetch(`/api/estabelecimentos/${id}`, {
+      const response = await fetch(`https://compara-preco-backend.onrender.com/api/estabelecimentos/${id}`, {
         method: "DELETE",
         headers: {
           Authorization: `Bearer ${token}`,
